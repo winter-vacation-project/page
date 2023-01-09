@@ -45,22 +45,35 @@ body {
     border-collapse: collapse;
     border: 2px solid #000;
     position: relative; 
-    margin: 50px 4%;
+    margin: 50px 50px;
 }
 
 .room_table th { border: 1px solid #000; background: rgb(128, 128, 128); }
 .room_table td { border: 1px solid #000; border-top: 0; }
 .room_table tbody {
     display: block;
-    height: calc(500px);
+    height: 500px;
     overflow: auto;
+}
+
+.room_table tbody::-webkit-scrollbar {
+width: 19px;
+}
+.room_table tbody::-webkit-scrollbar-thumb {
+background-color: #2f3542;
+border-radius: 19px;
+background-clip: padding-box;
+border: 2px solid transparent;
+}
+.room_table tbody::-webkit-scrollbar-track {
+background-color: grey;
+box-shadow: inset 0px 0px 5px white;
 }
 .room_table th:nth-of-type(1), .room_table td:nth-of-type(1) { width: 611.8055px; }
 .room_table th:nth-of-type(2), .room_table td:nth-of-type(2) { width: 611.8055px; }
 .room_table td:last-child { width: calc( 611.8055px - 19px );  }
 
 th, td {
-    border: 1px solid black;
     text-align: center;
     font-size: 25px;
     height: 53px;
