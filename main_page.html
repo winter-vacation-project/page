@@ -3,13 +3,12 @@
 <head>
     <title>main_page</title>
     <link rel = "stylesheet" href = "main_page.css">
-</head>
 <body>
     <div id = "page-wrapper">
         <div id = "content">
             <section id = "main-section">
                 <div class="table_list">
-                    <table class="room_table">
+                    <table class="room_table" id = 'testTable'>
                         <thead>
                             <tr><th>생성자</th><th>방 이름</th></tr>
                         </thead>
@@ -43,7 +42,7 @@
                     </div>
                     <div class="sub_enter">
                         <form>
-                                <input type="submit" value="입장">
+                            <input type="submit" value="입장" onclick="newPage">
                         </form>
                     </div>
                     <div class="btn_make_room">
@@ -57,3 +56,33 @@
     </div>
 </body>
 </html>
+<script>
+    function rowClicked() {
+ 
+    var table =document.getElementById('testTable');
+    var rowList = table.rows; // *1)rows collection
+    
+    for (i=1; i<rowList.length; i++) {//thead부분 제외.
+    
+        var row = rowList[i];
+        var tdsNum = row.childElementCount;// 자식요소 갯수 구하기.
+    
+        row.onclick = function(){ 
+            return function(){ 
+        
+            var str = "/" + this.cells[0].innerHTML;  
+            
+            document.querySelector('p').innerText =str;//p태그 안에 값 넣어주기.
+            
+        };//return
+    }(row);//onclick
+    }//for
+            
+    }//function
+
+    function newPage()  {
+    window.location.href = "str"
+    }
+
+    window.onload = rowClicked();
+</script>

@@ -78,6 +78,11 @@ th, td {
     font-size: 25px;
     height: 53px;
 }
+table tbody tr:hover {
+    background-color: lightgray;
+    cursor:pointer;
+}
+
 th{
     background-color: gray;
 }
